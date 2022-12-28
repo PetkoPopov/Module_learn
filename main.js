@@ -1,14 +1,18 @@
-import * as qwerty from"./my_module.js"
-import * as c from "./module2.js"
-var sum = qwerty.findSum(34,234)
-var my_cat =new c.Cat('black','Vasil')
-var button = document.getElementById('btn')
-button.style.width='200px'
-button.style.height='90px'
-addEventListener('click',()=>{
-  let text = document.getElementById("text")
-  text.innerHTML=sum
-  setTimeout(()=>{
-    text.innerHTML=my_cat.name+'---'+my_cat.color
-  },1000)
-})
+// import   as qwerty from "./my_module.js"
+// import   as c from "./module2.js"
+// import { coorArea } from "./test.js"
+import p5 from "../node_modules/p5/lib/p5.js"
+
+function setup() {
+  p5.createCanvas(200, 200);
+  p5.stroke(255, 0, 255);
+  v1 = createVector(width / 2, height / 2);
+}
+
+function draw() {
+  p5.background(255);
+  p5.line(v1.x, v1.y, mouseX, mouseY);
+  p5.describe('draws a line from center of canvas to mouse pointer position.');
+}
+setup()
+draw()
